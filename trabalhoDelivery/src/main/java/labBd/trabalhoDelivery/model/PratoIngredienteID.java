@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class PratoIngredienteID {
 	
 	private static final long serialVersionUID = 1L;
-	   
+	  
 	private Prato prato;
 	
 	private Ingrediente ingrediente;
