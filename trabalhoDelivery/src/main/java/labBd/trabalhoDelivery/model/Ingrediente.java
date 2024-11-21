@@ -2,6 +2,7 @@ package labBd.trabalhoDelivery.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -10,10 +11,11 @@ import lombok.Data;
 @Entity
 public class Ingrediente {
 	
+	@Id
 	@Column(name = "nome", length = 100, nullable = false)
 	private String nome;
 	
-	@Column(name = "nome", length = 40, nullable = false)
+	@Column(name = "formaApresent", length = 40, nullable = false)
 	private String formaApresent;
 	
 }

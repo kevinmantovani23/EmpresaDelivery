@@ -17,15 +17,12 @@ public class ItemID {
 	private static final long serialVersionUID = 1L;
 	
 	
-	@Id
-    @ManyToOne
-    @JoinColumn(name = "pratoCodigo", nullable = false)
+	 private Pedido pedido; 
+	 
+
 	private Prato prato;
 	
-	
-	@Id
-    @ManyToOne
-    @JoinColumn(name = "porcaoNome", nullable = false)
+
 	private Porcao porcao;
 
 }

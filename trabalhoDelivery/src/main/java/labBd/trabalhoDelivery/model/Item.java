@@ -23,6 +23,11 @@ public class Item {
 	@ManyToOne
 	@JoinColumn(name = "porcaoNome", nullable = false)
 	private Porcao porcao;
+	
+	@Id
+    @ManyToOne
+    @JoinColumn(name = "pedidoCodigo", nullable = false)
+    private Pedido pedido; 
 
 	private Double valor;
 

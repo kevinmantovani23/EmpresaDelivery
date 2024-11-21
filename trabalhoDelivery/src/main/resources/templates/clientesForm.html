@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<h1>Gerenciar Clientes</h1>
+
+<div>
+    <form th:action="@{/clientes}" method="post" th:object="${cliente}">
+        <table>
+            <tbody>
+                <tr>
+                    <td><label for="cpf">CPF:</label></td>
+                    <td><input type="text" id="cpf" th:field="*{cpf}"></td>
+                </tr>
+                <tr>
+                    <td><label for="nome">Nome:</label></td>
+                    <td><input type="text" id="nome" th:field="*{nome}"></td>
+                </tr>
+                <tr>
+                    <td><label for="telefone">Telefone:</label></td>
+                    <td><input type="text" id="telefone" th:field="*{telefone}"></td>
+                </tr>
+                <tr>
+                    <td><label for="logradouro">Logradouro:</label></td>
+                    <td><input type="text" id="logradouro" th:field="*{logradouro}"></td>
+                </tr>
+                <tr>
+                    <td><label for="numero">Número:</label></td>
+                    <td><input type="number" id="numero" th:field="*{numero}"></td>
+                </tr>
+                <tr>
+                    <td><label for="cep">CEP:</label></td>
+                    <td><input type="text" id="cep" th:field="*{cep}"></td>
+                </tr>
+                <tr>
+                    <td><label for="pontoRef">Ponto de Referência:</label></td>
+                    <td><input type="text" id="pontoRef" th:field="*{pontoRef}"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" name="acao" value="gravar">Gravar</button></td>
+                    <td><button type="submit" name="acao" value="pesquisar">Pesquisar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<h2>Lista de Clientes</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>CPF</th>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Logradouro</th>
+            <th>Número</th>
+            <th>CEP</th>
+            <th>Ponto de Referência</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cliente : ${clientes}">
+            <td th:text="${cliente.cpf}"></td>
+            <td th:text="${cliente.nome}"></td>
+            <td th:text="${cliente.telefone}"></td>
+            <td th:text="${cliente.logradouro}"></td>
+            <td th:text="${cliente.numero}"></td>
+            <td th:text="${cliente.cep}"></td>
+            <td th:text="${cliente.pontoRef}"></td>
+            <td>
+                <a th:href="@{/clientes/editar/{cpf}(cpf=${cliente.cpf})}">Editar</a>
+                <a th:href="@{/clientes/delete/{cpf}(cpf=${cliente.cpf})}">Excluir</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
