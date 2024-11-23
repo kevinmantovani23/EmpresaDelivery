@@ -1,6 +1,5 @@
 package labBd.trabalhoDelivery.model;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
@@ -25,6 +24,5 @@ public class PratoIngrediente {
     @JoinColumn(name = "ingredienteNome", nullable = false)
     private Ingrediente ingrediente;
     
-    @Column(name = "porcao", nullable = false)
-	private Double porcao;
+    
 }
