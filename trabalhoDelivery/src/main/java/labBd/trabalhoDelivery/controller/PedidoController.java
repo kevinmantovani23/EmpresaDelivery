@@ -5,27 +5,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
-import labBd.trabalhoDelivery.model.Ingrediente;
+ 
 import labBd.trabalhoDelivery.model.Item;
 import labBd.trabalhoDelivery.model.Pedido;
 import labBd.trabalhoDelivery.model.Porcao;
-import labBd.trabalhoDelivery.model.Prato;
-import labBd.trabalhoDelivery.model.PratoIngrediente;
-import labBd.trabalhoDelivery.repository.ClienteRepository;
-import labBd.trabalhoDelivery.repository.IngredienteRepository;
+import labBd.trabalhoDelivery.model.Prato; 
+import labBd.trabalhoDelivery.repository.ClienteRepository; 
 import labBd.trabalhoDelivery.repository.ItemRepository;
 import labBd.trabalhoDelivery.repository.PedidoRepository;
-import labBd.trabalhoDelivery.repository.PorcaoRepository;
-import labBd.trabalhoDelivery.repository.PratoIngredienteRepository;
+import labBd.trabalhoDelivery.repository.PorcaoRepository; 
 import labBd.trabalhoDelivery.repository.PratoRepository;
 
+@Controller
 public class PedidoController {
 	@Autowired
 	private PedidoRepository pedidoRepository;
