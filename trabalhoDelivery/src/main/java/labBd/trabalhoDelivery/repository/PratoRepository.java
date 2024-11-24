@@ -11,4 +11,6 @@ public interface PratoRepository  extends JpaRepository<Prato, String> {
 
 	@Query(value = "SELECT * FROM dbo.fn_pratoIngrediente(:pratoNome)", nativeQuery = true)
     List<Prato> cursorPratoIngrediente(String pratoNome);
+	
+	Prato findByNome(String nome);
 }
